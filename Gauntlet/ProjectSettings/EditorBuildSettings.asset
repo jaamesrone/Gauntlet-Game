@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseMenu.unity
     guid: ea0ff2a3a12a944cc94b0a0ee3f74957
+  - enabled: 1
+    path: Assets/Scenes/level1.unity
+    guid: cc0a480e3e7f1f14fad291631deaf057
+  - enabled: 1
+    path: Assets/Scenes/level2.unity
+    guid: eda8c2e9012c641849c9dfc1e754dccb
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: 8c57d790a3a73a84facb0eb622e8657d
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: f1a8080f9ef623e4b89e63abe0694790
+  - enabled: 1
+    path: Assets/Scenes/level5.unity
+    guid: 5550cadbca2d747c1bec863d95fef13c
   m_configObjects: {}
