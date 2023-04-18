@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+       
         rigid.velocity = moveInput * speed;
     }
 }
