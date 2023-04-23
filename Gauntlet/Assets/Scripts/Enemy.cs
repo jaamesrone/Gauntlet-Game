@@ -1,20 +1,19 @@
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    private PlayerController targetPlayer;
     public float moveSpeed = 5f;
-    public float detectionRadius;
+    public int health;
 
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
-        // Check if the player is within the detection radius
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= detectionRadius)
-        {
-            // Move the enemy towards the player
-            Vector3 directionToPlayer = (player.position - transform.position).normalized;
-            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
-        }
+        targetPlayer = DetectPlayer();
+        Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
+        transform.position += directionToPlayer * moveSpeed * Time.deltaTime;      
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,6 +21,31 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameManager.Instance.timer -= 10;
+        }
+    }
+
+    private PlayerController DetectPlayer()
+    {
+        float minDis = 1000000;
+        PlayerController targetPlayer=null;
+        for (int i = 0; i < GameManager.Instance.players.Count; i++)
+        {
+            float dis = Vector3.Distance(transform.position, GameManager.Instance.players[i].transform.position);
+            if (dis<minDis)
+            {
+                targetPlayer = GameManager.Instance.players[i];
+                minDis = dis;
+            }
+        }
+        return targetPlayer;
+    }
+
+    public void Hurt(int damage)
+    {
+        health -= damage;
+        if (health<=0)
+        {
+            Destroy(gameObject);
         }
     }
 }
