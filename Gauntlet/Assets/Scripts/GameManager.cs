@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
 
     public GameObject playerPrefab;
     public GameObject warriorPrefab;
+    public GameObject wizardPrefab;
 
     private PlayerInputManager inputManager;
 
@@ -20,7 +21,7 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         players.Add(PlayerInput.Instantiate(warriorPrefab, controlScheme: "Wasd", pairWithDevice: Keyboard.current).GetComponent<PlayerController>());
-        players.Add(PlayerInput.Instantiate(playerPrefab, controlScheme: "Arrow", pairWithDevice: Keyboard.current).GetComponent<PlayerController>());
+        players.Add(PlayerInput.Instantiate(wizardPrefab, controlScheme: "Arrow", pairWithDevice: Keyboard.current).GetComponent<PlayerController>());
         players.Add(PlayerInput.Instantiate(playerPrefab, controlScheme: "Stick").GetComponent<PlayerController>());
         players.Add(PlayerInput.Instantiate(playerPrefab, controlScheme: "Stick").GetComponent<PlayerController>());
     }

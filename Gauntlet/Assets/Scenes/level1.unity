@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -359,6 +359,7 @@ MonoBehaviour:
   timer: 2000
   playerPrefab: {fileID: 8851842216159233294, guid: 9eab7652b353cbe4f9a964500de4014d, type: 3}
   warriorPrefab: {fileID: 934270889948887658, guid: 0b4f585f12722f040aeec0cde1e746f5, type: 3}
+  wizardPrefab: {fileID: 4850619366690265498, guid: e829472e1336047e790aac341b884421, type: 3}
   players: []
 --- !u!4 &226880550
 Transform:
@@ -797,7 +798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 162.8, y: 12.67}
+  m_AnchoredPosition: {x: 162.79999, y: 12.670013}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804387931
