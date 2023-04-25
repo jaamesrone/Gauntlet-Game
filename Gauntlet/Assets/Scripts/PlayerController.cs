@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
         return Time.time - lastAttackTime >= attackSpeed;
     }
 
-    protected virtual IEnumerator Attack()
+    protected virtual void Attack()
     {
-        yield return null;
+        
     }
 
     private void OnAttack(InputValue value)
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         if (CanAttack())
         {
             lastAttackTime = Time.time;
-            StartCoroutine(Attack());
+            Attack();
         }
     }
 }

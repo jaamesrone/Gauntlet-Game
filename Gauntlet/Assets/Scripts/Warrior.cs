@@ -9,7 +9,7 @@ public class Warrior : PlayerController
     // Start is called before the first frame update
 
 
-    protected override IEnumerator Attack()
+    private  IEnumerator AttackAnimation()
     {
         float rotateAngle = 0;
         while (rotateAngle<360)
@@ -21,5 +21,8 @@ public class Warrior : PlayerController
         rotateAngle = 0;
     }
 
-
+    protected override void Attack()
+    {
+        StartCoroutine(AttackAnimation());
+    }
 }
