@@ -12,6 +12,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject playerPrefab;
     public GameObject warriorPrefab;
     public GameObject wizardPrefab;
+    public GameObject elfPrefab;
+    public GameObject valkyriePrefab;
 
     private PlayerInputManager inputManager;
 
@@ -22,8 +24,8 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
         players.Add(PlayerInput.Instantiate(warriorPrefab, controlScheme: "Wasd", pairWithDevice: Keyboard.current).GetComponent<PlayerController>());
         players.Add(PlayerInput.Instantiate(wizardPrefab, controlScheme: "Arrow", pairWithDevice: Keyboard.current).GetComponent<PlayerController>());
-        players.Add(PlayerInput.Instantiate(playerPrefab, controlScheme: "Stick").GetComponent<PlayerController>());
-        players.Add(PlayerInput.Instantiate(playerPrefab, controlScheme: "Stick").GetComponent<PlayerController>());
+        players.Add(PlayerInput.Instantiate(elfPrefab, controlScheme: "Stick").GetComponent<PlayerController>());
+        players.Add(PlayerInput.Instantiate(valkyriePrefab, controlScheme: "Stick").GetComponent<PlayerController>());
     }
 
     // Start is called before the first frame update

@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class Fireball : MonoBehaviour
 {
     public float speed = 5.0f;
     public float lifetime = 2.0f;
+    public Vector3 direction=Vector3.up;
+    
 
     private float timer;
 
@@ -16,7 +19,7 @@ public class Fireball : MonoBehaviour
     void Update()
     {
         // Move the fireball up
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
 
         // Increment the timer
         timer += Time.deltaTime;
@@ -32,7 +35,7 @@ public class Fireball : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            int damage = GetComponentInParent<Wizard>().attackDamage;
+            int damage = GetComponentInParent<PlayerController>().attackDamage;
             other.gameObject.GetComponent<Enemy>().Hurt(damage);
         }
     }

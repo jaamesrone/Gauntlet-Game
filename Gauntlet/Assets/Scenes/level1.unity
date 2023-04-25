@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -360,6 +360,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 8851842216159233294, guid: 9eab7652b353cbe4f9a964500de4014d, type: 3}
   warriorPrefab: {fileID: 934270889948887658, guid: 0b4f585f12722f040aeec0cde1e746f5, type: 3}
   wizardPrefab: {fileID: 4850619366690265498, guid: e829472e1336047e790aac341b884421, type: 3}
+  elfPrefab: {fileID: 5851719841660993951, guid: 0741187d4e13bb649871401465d8d6db, type: 3}
+  valkyriePrefab: {fileID: 8477097277821585553, guid: 8e85b598ab9cf4e8a8e1d2ec2c4bff55, type: 3}
   players: []
 --- !u!4 &226880550
 Transform:

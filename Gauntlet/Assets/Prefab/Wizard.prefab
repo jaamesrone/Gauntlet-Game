@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifetime: 2
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &4850619366690265498
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,10 +160,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   armor: 0
-  magicPower: 0
+  magicPower: 10
   attackDamage: 10
-  attackSpeed: 0
-  fireballPrefab: {fileID: 4932655505193747837, guid: 0ed01626626b941159ae0fa0be2ba271, type: 3}
+  attackSpeed: 1
+  weapon: {fileID: 4932655505193747837, guid: 0ed01626626b941159ae0fa0be2ba271, type: 3}
 --- !u!114 &4543584202208043679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5131624077939189972}
   - component: {fileID: 8302755554673779673}
-  - component: {fileID: 2014718649009701581}
   - component: {fileID: 9032001161759014934}
   m_Layer: 0
   m_Name: Camera
@@ -268,7 +268,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -285,14 +285,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2014718649009701581
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7188815808776731048}
-  m_Enabled: 1
 --- !u!114 &9032001161759014934
 MonoBehaviour:
   m_ObjectHideFlags: 0
