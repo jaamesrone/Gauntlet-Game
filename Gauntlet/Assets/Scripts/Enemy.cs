@@ -9,8 +9,14 @@ public class Enemy : MonoBehaviour
     protected float lastAttackTime=0;
     public float attackTimeGap;//determine the attackspeed of the enemy
     public int attackForce;
+    protected Rigidbody rigid;
 
-  
+    protected virtual void Start()
+    {
+        rigid = GetComponent<Rigidbody>();
+    }
+
+
     protected virtual void Update()
     {
         targetPlayer = DetectPlayer();
@@ -21,7 +27,7 @@ public class Enemy : MonoBehaviour
         else
         {
             Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
-            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
+           transform.position += directionToPlayer * moveSpeed *Time.deltaTime ;
         }
       
     }

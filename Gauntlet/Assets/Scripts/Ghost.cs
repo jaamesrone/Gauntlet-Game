@@ -9,8 +9,9 @@ public class Ghost : Enemy
     public float delayExplodeTime;
     private Color originalColor;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         meshRenderer = GetComponent<MeshRenderer>();
         originalColor = meshRenderer.material.color;
     }
@@ -27,13 +28,12 @@ public class Ghost : Enemy
                 Attack();
             }
             Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
-            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
+           transform.position+= directionToPlayer * moveSpeed*Time.deltaTime;
         }
 
     }
     protected override void Attack()
     {
-        Debug.Log("attacking");
         StartCoroutine(Explode());
 
     }

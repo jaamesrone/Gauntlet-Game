@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     protected Vector3 moveInput;
     public float speed;
     private Rigidbody rigid;
+
     public int armor;
     public int magicPower;
     public int attackDamage;
     public GameObject weapon;
     public int maxHealth;
     private int currentHealth;
+    public Text healthText;
 
 
     protected float lastAttackTime=0;
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         currentHealth = maxHealth;
+        healthText.text = "Health: " + maxHealth;
     }
     private void OnMove(InputValue value)
     {
@@ -44,7 +48,9 @@ public class PlayerController : MonoBehaviour
     protected virtual void Attack()
     {
         GameObject bullet = Instantiate(weapon, transform.position, Quaternion.identity, transform);
-        bullet.GetComponent<Fireball>().direction = moveInput;
+        Fireball b = bullet.GetComponent<Fireball>();
+        b.direction = moveInput;
+        b.shootedByPlayer = true;
     }
 
     private void OnAttack(InputValue value)
@@ -59,6 +65,6 @@ public class PlayerController : MonoBehaviour
     public void Hurt(int damage)
     {
         currentHealth -= damage;
-        Debug.Log(currentHealth);
+        healthText.text = "Health: " + currentHealth;
     }
 }

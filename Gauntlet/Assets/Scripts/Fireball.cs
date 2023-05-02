@@ -7,6 +7,8 @@ public class Fireball : MonoBehaviour
     public float speed = 5.0f;
     public float lifetime = 2.0f;
     public Vector3 direction;
+    public bool shootedByPlayer;
+    public bool shootedByLobber;
     
 
     private float timer;
@@ -37,10 +39,29 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (!shootedByLobber&&other.gameObject.tag=="Wall")
         {
-            int damage = GetComponentInParent<PlayerController>().attackDamage;
-            other.gameObject.GetComponent<Enemy>().Hurt(damage);
+            Destroy(gameObject);
+        }
+        if (shootedByPlayer)
+        {
+            if (other.gameObject.tag == "Enemy")
+            {
+                int damage = GetComponentInParent<PlayerController>().attackDamage;
+                other.gameObject.GetComponent<Enemy>().Hurt(damage);
+                Destroy(gameObject);
+
+            }
+        }
+        else
+        {
+            if (other.gameObject.tag=="Player")
+            {
+                int damage = GetComponentInParent<Enemy>().attackForce;
+                other.gameObject.GetComponent<PlayerController>().Hurt(damage);
+                Destroy(gameObject);
+
+            }
         }
     }
 }

@@ -38,13 +38,13 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        UpdateTime();
+      //  UpdateTime();
     }
 
-    public void UpdateTime()
-    {
-        timer -= Time.deltaTime;
-        timerUI.text = "Health: " + timer.ToString("F2");
-    }
+    //public void UpdateTime()
+    //{
+    //    timer -= Time.deltaTime;
+    //    timerUI.text = "Health: " + timer.ToString("F2");
+    //}
 
 }
