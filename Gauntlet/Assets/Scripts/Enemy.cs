@@ -1,19 +1,17 @@
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    private PlayerController targetPlayer;
+    protected PlayerController targetPlayer;
     public float moveSpeed = 5f;
     public int health;
     public int enemyLevel;
     public float attackRange;
-    private float lastAttackTime;
+    protected float lastAttackTime=0;
     public float attackTimeGap;//determine the attackspeed of the enemy
+    public int attackForce;
 
-    private void Start()
-    {
-        
-    }
-    private void Update()
+  
+    protected virtual void Update()
     {
         targetPlayer = DetectPlayer();
         if (Vector3.Distance(transform.position,targetPlayer.transform.position)<= attackRange)
@@ -36,7 +34,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private PlayerController DetectPlayer()
+    protected PlayerController DetectPlayer()
     {
         float minDis = 1000000;
         PlayerController targetPlayer=null;

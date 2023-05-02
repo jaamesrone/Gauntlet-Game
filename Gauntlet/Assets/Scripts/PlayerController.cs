@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public int magicPower;
     public int attackDamage;
     public GameObject weapon;
+    public int maxHealth;
+    private int currentHealth;
 
 
     protected float lastAttackTime=0;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        currentHealth = maxHealth;
     }
     private void OnMove(InputValue value)
     {
@@ -51,5 +54,11 @@ public class PlayerController : MonoBehaviour
             lastAttackTime = Time.time;
             Attack();
         }
+    }
+
+    public void Hurt(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
     }
 }
