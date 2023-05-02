@@ -4,6 +4,10 @@ public class Enemy : MonoBehaviour
     private PlayerController targetPlayer;
     public float moveSpeed = 5f;
     public int health;
+    public int enemyLevel;
+    public float attackRange;
+    private float lastAttackTime;
+    public float attackTimeGap;//determine the attackspeed of the enemy
 
     private void Start()
     {
@@ -12,8 +16,16 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         targetPlayer = DetectPlayer();
-        Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
-        transform.position += directionToPlayer * moveSpeed * Time.deltaTime;      
+        if (Vector3.Distance(transform.position,targetPlayer.transform.position)<= attackRange)
+        {
+            Attack();
+        }
+        else
+        {
+            Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
+            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
+        }
+      
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -47,5 +59,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    protected virtual void Attack()
+    {
+
     }
 }

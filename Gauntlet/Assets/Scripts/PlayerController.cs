@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     public int armor;
     public int magicPower;
     public int attackDamage;
+    public GameObject weapon;
 
-    
+
     protected float lastAttackTime=0;
     public float attackSpeed;//the small it is, the fast it can attack
 
@@ -39,7 +40,8 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        
+        GameObject bullet = Instantiate(weapon, transform.position, Quaternion.identity, transform);
+        bullet.GetComponent<Fireball>().direction = moveInput;
     }
 
     private void OnAttack(InputValue value)

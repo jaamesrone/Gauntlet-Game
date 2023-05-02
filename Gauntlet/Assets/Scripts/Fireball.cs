@@ -6,7 +6,7 @@ public class Fireball : MonoBehaviour
 {
     public float speed = 5.0f;
     public float lifetime = 2.0f;
-    public Vector3 direction=Vector3.up;
+    public Vector3 direction;
     
 
     private float timer;
@@ -19,6 +19,10 @@ public class Fireball : MonoBehaviour
     void Update()
     {
         // Move the fireball up
+        if (direction==Vector3.zero)
+        {
+            direction = Vector3.up;
+        }
         transform.Translate(direction * speed * Time.deltaTime);
 
         // Increment the timer

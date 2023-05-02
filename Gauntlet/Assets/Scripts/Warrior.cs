@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Warrior : PlayerController
 {
-    public GameObject weapon;
     // Start is called before the first frame update
 
 
