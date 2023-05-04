@@ -14,6 +14,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject wizardPrefab;
     public GameObject elfPrefab;
     public GameObject valkyriePrefab;
+    public GameObject treasureBagPrefab;
+
 
     private PlayerInputManager inputManager;
 

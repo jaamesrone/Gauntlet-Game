@@ -10,25 +10,31 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Rigidbody rigid;
 
+    public int upgradePotions;//
+    public int potions;//
+    public int keys;//
+
+    public int score;
     public int armor;
     public int magicPower;
     public int attackDamage;
     public GameObject weapon;
     public int maxHealth;
     private int currentHealth;
+    public Text scoreText;
     public Text healthText;
 
-
-    protected float lastAttackTime=0;
-    public float attackSpeed;//the small it is, the fast it can attack
-
+    protected float lastAttackTime = 0;
+    public float attackSpeed; // The smaller it is, the faster the player can attack
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
         currentHealth = maxHealth;
         healthText.text = "Health: " + maxHealth;
+        scoreText.text = "Score: " + 0;
     }
+
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -36,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
         rigid.velocity = moveInput * speed;
     }
 
@@ -66,5 +71,11 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         healthText.text = "Health: " + currentHealth;
+    }
+
+    public void AddPoints(int points)//
+    {
+        score += points;
+        scoreText.text = "Score: " + score;
     }
 }
