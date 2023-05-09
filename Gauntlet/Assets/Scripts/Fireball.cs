@@ -45,12 +45,17 @@ public class Fireball : MonoBehaviour
         }
         if (shootedByPlayer)
         {
+            int damage = GetComponentInParent<PlayerController>().attackDamage;
             if (other.gameObject.tag == "Enemy")
             {
-                int damage = GetComponentInParent<PlayerController>().attackDamage;
                 other.gameObject.GetComponent<Enemy>().Hurt(damage);
                 Destroy(gameObject);
 
+            }
+            if (other.gameObject.tag=="EnemySpawner")
+            {
+                other.gameObject.GetComponent<EnemySpawner>().Hurt(damage);
+                Destroy(gameObject);
             }
         }
         else

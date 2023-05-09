@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
+public enum ItemName
+{
+    Potion,
+    Food,
+}
+
 public class GameManager : Singleton<GameManager>
 {
     public TextMeshProUGUI timerUI;
@@ -20,6 +26,8 @@ public class GameManager : Singleton<GameManager>
     private PlayerInputManager inputManager;
 
     public List<PlayerController> players = new List<PlayerController>();
+
+    public List<Enemy> enemys = new List<Enemy>();
 
     public override void Awake()
     {

@@ -22,6 +22,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UsingFirstItem",
+                    "type": "Button",
+                    "id": "1cd60279-58ce-4a71-b99c-72fdfb614d28",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UsingSecondItem",
+                    "type": "Button",
+                    "id": "5f9aaa07-4619-4d68-8cd8-e3a9ff59e616",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -176,6 +194,72 @@
                     "processors": "",
                     "groups": "Stick",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f859b034-84cf-478f-8039-e40dc6f578ec",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Wasd",
+                    "action": "UsingFirstItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95460ea1-ebdd-4128-b9db-7cd1a45a43bc",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrow",
+                    "action": "UsingFirstItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "079bc899-e3ad-4bde-bb35-5f0dab709f72",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Stick",
+                    "action": "UsingFirstItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1155e1d-7398-4505-ba04-e9a43ff3de47",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Wasd",
+                    "action": "UsingSecondItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2d9828b3-b065-41da-9e2a-65db7ddd66db",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Arrow",
+                    "action": "UsingSecondItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bfa93898-f8e3-4a53-8ca5-a6853db9ac7f",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Stick",
+                    "action": "UsingSecondItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

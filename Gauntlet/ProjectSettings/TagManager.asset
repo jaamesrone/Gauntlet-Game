@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - TreasureBag
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

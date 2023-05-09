@@ -1,15 +1,13 @@
 using UnityEngine;
+using System;
 
 public class TreasureBag : MonoBehaviour
 {
-    public int points;//
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag=="Player")
         {
-            PlayerController player = other.GetComponent<PlayerController>();
-            player.AddPoints(points);
+            other.GetComponent<PlayerController>().ChangeScore(500);
             Destroy(gameObject);
         }
     }
