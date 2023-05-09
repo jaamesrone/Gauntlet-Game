@@ -10,7 +10,7 @@ public class Wizard : PlayerController
             Enemy e = GameManager.Instance.enemys[i];
             if (e != null)
             {
-                if (e.enemyLevel <= 3 && Vector3.Distance(transform.position, e.transform.position) <= 30)
+                if ((e.enemyLevel <= 3 || e.isDeath) && Vector3.Distance(transform.position, e.transform.position) <= 30)
                 {
                     GameManager.Instance.enemys.Remove(e);
                     e.Dead();

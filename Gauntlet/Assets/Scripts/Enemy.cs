@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float attackTimeGap;//determine the attackspeed of the enemy
     public int attackForce;
     protected Rigidbody rigid;
+    public bool isDeath;
 
     protected virtual void Start()
     {

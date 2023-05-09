@@ -131,3 +131,4 @@ MonoBehaviour:
   attackRange: 2
   attackTimeGap: 2
   attackForce: 20
+  isDeath: 1

@@ -27,7 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     public List<PlayerController> players = new List<PlayerController>();
 
-    public List<Enemy> enemys = new List<Enemy>();
+    public List<Enemy> enemys;
 
     public override void Awake()
     {
@@ -38,23 +38,19 @@ public class GameManager : Singleton<GameManager>
         players.Add(PlayerInput.Instantiate(valkyriePrefab, controlScheme: "Stick").GetComponent<PlayerController>());
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-    
-
+        InitScene();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitScene()
     {
-      //  UpdateTime();
+        enemys = new List<Enemy>();
+        Death[] ds = GameObject.Find("Deaths").GetComponentsInChildren<Death>();
+        for (int i = 0; i < ds.Length; i++)
+        {
+            enemys.Add(ds[i]);
+        }
     }
-
-    //public void UpdateTime()
-    //{
-    //    timer -= Time.deltaTime;
-    //    timerUI.text = "Health: " + timer.ToString("F2");
-    //}
 
 }
