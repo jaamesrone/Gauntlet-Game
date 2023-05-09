@@ -18,6 +18,11 @@ public class Lobber : Enemy
         {
             Attack();
         }
+        else
+        {
+            Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
+            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
+        }
     }
 
     protected override void Attack()

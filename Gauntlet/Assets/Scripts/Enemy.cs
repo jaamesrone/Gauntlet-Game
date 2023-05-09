@@ -20,16 +20,15 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         targetPlayer = DetectPlayer();
-        if (Vector3.Distance(transform.position,targetPlayer.transform.position)<= attackRange)
+        if (Vector3.Distance(transform.position, targetPlayer.transform.position) <= attackRange)
         {
             Attack();
         }
         else
         {
             Vector3 directionToPlayer = (targetPlayer.transform.position - transform.position).normalized;
-           transform.position += directionToPlayer * moveSpeed *Time.deltaTime ;
+            transform.position += directionToPlayer * moveSpeed * Time.deltaTime;
         }
-      
     }
 
     private void OnCollisionEnter(Collision collision)

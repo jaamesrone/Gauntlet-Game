@@ -7,16 +7,6 @@ public class Inventory : MonoBehaviour
     public List<InventoryItem> inventory = new List<InventoryItem>();//contain the kind of item, not the number of items
     private Dictionary<InventoryData, InventoryItem> itemDictionary = new Dictionary<InventoryData, InventoryItem>();
 
-    //private void OnEnable()
-    //{
-    //    TreasureBag.OnTreasureBagCollected += Add;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    TreasureBag.OnTreasureBagCollected -= Add;
-    //}
-
     public void Add(InventoryData itemData)
     {
         if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
@@ -46,14 +36,4 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //ICollectable collectable = other.GetComponent<ICollectable>();
-        //if (collectable != null&&inventory.Count<2)
-        //{
-        //    // collectable.Collect();
-        //    InventoryItem newItem = new InventoryItem(itemData);
-        //    inventory.Add(newItem);
-        //}
-    }
 }

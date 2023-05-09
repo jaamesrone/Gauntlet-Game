@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject spawnPos;
     public float spawnTime;
     public int maxHealth;
     private int currentHealth;
@@ -17,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
    private void SpawnEnemy()
     {
-       GameManager.Instance.enemys.Add( Instantiate(enemyPrefab, transform.position, Quaternion.identity).GetComponent<Enemy>());
+       GameManager.Instance.enemys.Add( Instantiate(enemyPrefab, spawnPos.transform.position, Quaternion.identity).GetComponent<Enemy>());
     }
 
     public void Hurt(int damage)
