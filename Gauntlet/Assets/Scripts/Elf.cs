@@ -14,7 +14,7 @@ public class Elf : PlayerController
                 if ((e.enemyLevel <= 3 || e.isDeath) && Vector3.Distance(transform.position, e.transform.position) <= 20)
                 {
                     GameManager.Instance.enemys.Remove(e);
-                    e.Dead();
+                    ChangeScore( e.Dead());
                 }
             }
         }

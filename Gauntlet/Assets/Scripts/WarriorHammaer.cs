@@ -8,8 +8,9 @@ public class WarriorHammaer : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            int damage = GetComponentInParent<Warrior>().attackDamage;
-            other.gameObject.GetComponent<Enemy>().Hurt(damage);
+            Warrior w = GetComponentInParent<Warrior>();
+            int damage = w.attackDamage;
+            w.ChangeScore(other.gameObject.GetComponent<Enemy>().Hurt(damage));
         }
         if (other.gameObject.tag == "EnemySpawner")
         {

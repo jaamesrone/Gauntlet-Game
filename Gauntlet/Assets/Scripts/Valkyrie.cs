@@ -14,7 +14,7 @@ public class Valkyrie : PlayerController
                 if ((e.enemyLevel <= 2 || e.isDeath) && Vector3.Distance(transform.position, e.transform.position) <= 15)
                 {
                     GameManager.Instance.enemys.Remove(e);
-                    e.Dead();
+                    ChangeScore(e.Dead());
                 }
             }
         }

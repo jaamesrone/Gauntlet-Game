@@ -35,7 +35,7 @@ public class Warrior : PlayerController
                 if ((e.enemyLevel<=1||e.isDeath)&&Vector3.Distance(transform.position,e.transform.position)<=10)
                 {
                     GameManager.Instance.enemys.Remove(e);
-                    e.Dead();
+                    ChangeScore(e.Dead());
                 }
             }
         }

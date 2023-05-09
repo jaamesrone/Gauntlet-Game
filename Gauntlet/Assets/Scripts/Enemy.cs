@@ -11,10 +11,12 @@ public class Enemy : MonoBehaviour
     public int attackForce;
     protected Rigidbody rigid;
     public bool isDeath;
+    protected int scoreAwarded;
 
     protected virtual void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        scoreAwarded = enemyLevel * 10;
     }
 
 
@@ -56,12 +58,16 @@ public class Enemy : MonoBehaviour
         return targetPlayer;
     }
 
-    public void Hurt(int damage)
+    public virtual int Hurt(int damage)
     {
         health -= damage;
         if (health<=0)
         {
-            Dead();
+           return Dead();
+        }
+        else
+        {
+            return 0;
         }
     }
 
@@ -70,8 +76,9 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public virtual void Dead()
+    public virtual int Dead()
     {
         Destroy(gameObject);
+        return scoreAwarded;
     }
 }

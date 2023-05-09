@@ -17,10 +17,11 @@ public class Thieves : Enemy
         }
     }
 
-    public override void Dead()
+    public override int Dead()
     {
         GameObject treasureBag = Resources.Load<GameObject>("Prefab/Treasurebag");
         Instantiate(treasureBag, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        return scoreAwarded;
     }
 }
